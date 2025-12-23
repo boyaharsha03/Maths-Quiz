@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Math Quiz – Practice & Exam</title>
+  <link rel="stylesheet" href="math.css"/>
+</head>
+<body>
+  <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4"/>
+  </video>
+  <canvas id="bgParticles" aria-hidden="true"></canvas>
+
+  <div class="app" role="application" aria-label="Math Quiz App">
+    <!-- MODE SELECTION PAGE (Now the starting page) -->
+    <div id="modePage" class="center-card">
+      <div class="card-box">
+        <h1 class="welcome-title">Math Quiz</h1>
+        <h2 style="color:#43e97b;font-weight:800;margin-bottom:18px;">Choose Mode</h2>
+        <div class="mode-row">
+          <button id="practiceModeBtn" class="glow-btn">Practice Mode</button>
+          <button id="examModeBtn" class="glow-btn">Exam Mode</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice Setup -->
+    <div id="practiceScreen" class="center-card hidden">
+      <div class="card-box">
+        <h2>Practice Mode</h2>
+        <div class="form-row">
+          <label>Topic
+            <select id="topicSelect">
+              <option value="addition">Addition</option>
+              <option value="subtraction">Subtraction</option>
+              <option value="multiplication">Multiplication</option>
+              <option value="division">Division</option>
+              <option value="square">Square</option>
+              <option value="cube">Cube</option>
+              <option value="squareRoot">Square Root</option>
+              <option value="cubeRoot">Cube Root</option>
+              <option value="bodmas">BODMAS</option>
+              <option value="area">Area</option>
+              <option value="perimeter">Perimeter</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Difficulty
+            <select id="difficultyPractice">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+        </div>
+        <br/>
+        <button id="startPracticeBtn" class="glow-btn">Start Practice</button>
+        <button id="homeBtn" class="glow-btn">Home</button>
+      </div>
+    </div>
+
+    <!-- Exam Setup -->
+    <div id="examScreen" class="center-card hidden">
+      <div class="card-box">
+        <h2>Exam Mode</h2>
+        <div class="form-row">
+          <label>Difficulty
+            <select id="difficultyExam">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+        </div>
+        <button id="startExamBtn" class="glow-btn">Start Exam</button>
+        <button id="homeBtn" class="glow-btn">Home</button>
+      </div>
+    </div>
+
+    <!-- Quiz Area -->
+    <div id="quizArea" class="hidden" aria-live="polite">
+      <div class="quiz-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+          <h3>Questions</h3>
+          <div id="questionNumbers" aria-label="Question numbers"></div>
+        </div>
+
+        <!-- Center Area -->
+        <div class="quiz-center">
+          <button id="markBtn" class="mark-btn" title="Mark question for review">⭐ Mark</button>
+          <div id="quizQuestion" class="quiz-question" aria-atomic="true">Question text</div>
+          <div id="quizOptions" class="quiz-options" role="group" aria-label="Answer choices"></div>
+
+          <!-- Explanation Box -->
+          <div id="explanationBox" class="explanation-box" style="display:none;" aria-live="polite"></div>
+
+          <!-- Navigation -->
+          <div class="nav-controls">
+            <button id="prevBtn" class="glow-btn">Previous</button>
+            <button id="nextBtn" class="glow-btn">Next</button>
+            <button id="submitQuizBtn" class="glow-btn">Submit</button>
+          </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="timer-box">
+          <h4>Timer</h4>
+          <canvas id="clockTimer" width="120" height="120" aria-hidden="true"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Area -->
+    <div id="resultArea" class="center-card hidden" aria-live="polite">
+      <div class="card-box">
+        <h2>Results</h2>
+        <p id="resultSummary"></p>
+        <button id="homeBtn" class="glow-btn">Home</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blast Effect -->
+  <div id="blastEffect" aria-hidden="true">
+    <div id="perfectMessage" role="status" aria-live="assertive"></div>
+  </div>
+
+  <script src="math.js"></script>
+</body>
+</html>
