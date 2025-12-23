@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Math Quiz</title>
+  <link rel="stylesheet" href="login.css"/>
+</head>
+<body>
+  <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4"/>
+  </video>
+  <canvas id="bgParticles" aria-hidden="true"></canvas>
+
+  <div class="app" role="application" aria-label="Math Quiz Login">
+    <!-- Login Page -->
+    <div id="loginPage" class="center-card login-center">
+      <div class="card-box">
+        <h1 class="welcome-title">Welcome</h1>
+        <h2 style="color:indianred;font-weight:700;margin-bottom:18px;">Math Quiz</h2>
+        <label for="userName" style="font-size:1.1em;color:#fff;">Enter your name:</label>
+        <input type="text" id="userName" class="input-name" placeholder="Your name" autocomplete="off" />
+        <button id="loginBtn" class="glow-btn" style="margin-top:18px;">Start Quiz</button>
+        <div id="loginMsg" style="margin-top:12px;color:#ff7eb3;font-weight:600;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
