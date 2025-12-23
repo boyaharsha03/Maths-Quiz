@@ -1,0 +1,182 @@
+/* ==============================
+   Login Page Styles
+   ============================== */
+
+:root{
+  --accent-a: #ff7eb3; /* warm accent */
+  --accent-b: #a66fb2; /* mauve */
+  --glass: rgba(0,0,0,0.75);
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+body{
+  background: #111;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* background video & particles */
+#bgVideo {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  pointer-events: none;
+  filter: saturate(0.98) contrast(0.95) brightness(0.6);
+}
+#bgParticles{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -2;
+  pointer-events:none;
+}
+
+.app{position:relative;z-index:2}
+
+/* ---------------------------
+   Center Card
+   --------------------------- */
+.center-card{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:24px
+}
+
+/* ---------------------------
+   Card Box
+   --------------------------- */
+.card-box{
+  background: var(--glass);
+  padding:40px 30px;
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.22);
+  min-width:380px;
+  text-align:center;
+  color:#fff;
+}
+
+/* ---------------------------
+   Welcome Title
+   --------------------------- */
+.welcome-title {
+  font-size: 3em;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 32px rgba(67,233,123,0.25), 0 1.5px 4px rgba(0,0,0,0.07);
+  animation: fadeInScale 1s cubic-bezier(.4,2,.6,1);
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.8);}
+  to   { opacity: 1; transform: scale(1);}
+}
+
+/* ---------------------------
+   Input Field for Name
+   --------------------------- */
+.input-name {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 18px 0 0 0;
+  border-radius: 8px;
+  border: 1.5px solid #fff;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 1.1em;
+  outline: none;
+  transition: border 0.2s;
+}
+.input-name:focus {
+  border: 1.5px solid #43e97b;
+}
+.input-name::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ---------------------------
+   Glow Button
+   --------------------------- */
+.glow-btn{
+  background:linear-gradient(135deg,var(--accent-a),var(--accent-b));
+  padding:12px 24px;
+  border-radius:12px;
+  border:none;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  transition:transform .18s,box-shadow .18s,opacity .12s;
+  min-width:150px;
+  font-size: 1em;
+}
+.glow-btn:active{ transform:translateY(0); }
+.glow-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.24)
+}
+
+/* ---------------------------
+   Login Center
+   --------------------------- */
+.login-center {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* ---------------------------
+   Floating Math Symbols
+   --------------------------- */
+.symbol{
+  position:absolute;
+  color:rgba(255,255,255,0.95);
+  pointer-events:none;
+  z-index:3;
+  text-shadow:0 6px 20px rgba(0,0,0,0.12)
+}
+@keyframes floatup{
+  from{transform:translateY(110vh) rotate(0deg);opacity:1}
+  to{transform:translateY(-10vh) rotate(360deg);opacity:0}
+}
+
+/* ---------------------------
+   Responsive Design
+   --------------------------- */
+@media (max-width:500px){
+  .card-box{
+    min-width:300px;
+    padding:30px 20px;
+  }
+  .welcome-title{
+    font-size:2.2em;
+  }
+  .glow-btn{
+    min-width:120px;
+    padding:10px 18px;
+  }
+}
